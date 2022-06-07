@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.github.matthewmong.equinox</id>
+  
+  <name>Equinox</name>
+  <summary>A Weather App</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <description>
+    <p>
+      A simple weather application
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">com.github.matthewmong.equinox.desktop</launchable>
+</component>

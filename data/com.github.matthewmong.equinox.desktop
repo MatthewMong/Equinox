@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Equinox
+Comment=A Weather App
+Categories=Utility;GTK;
+
+Icon=com.github.matthewmong.equinox
+Exec=com.github.matthewmong.equinox
+Terminal=false
