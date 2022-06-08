@@ -11,6 +11,7 @@ executable(
     'src/MainWindow.vala',
     'src/Constants.vala',
     'src/Utils/Locate.vala',
+    'src/Utils/Weather.vala',
     dependencies: [
         dependency('gtk+-3.0'),
         dependency('granite'),

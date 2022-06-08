@@ -18,10 +18,14 @@ namespace Equinox {
             view.expand = true;
             view.halign = Gtk.Align.FILL;
             view.valign = Gtk.Align.FILL;
-            view.attach (new Gtk.Label(("Loading") +  "..."), 0, 0, 1, 1);
+            //  view.attach (new Gtk.Label(("Loading") +  "..."), 0, 0, 1, 1);
             overlay.add_overlay (view);
             Equinox.Utils.locate();
-            overlay.add_overlay(new Gtk.Label(setting.get_string("location")));
+            Equinox.Utils.getWeather();
+            view.attach(new Gtk.Label(setting.get_string("location")), 1, 0, 1, 1);
+            view.attach(new Gtk.Label(setting.get_string("weather-main")), 0, 1, 1, 1);
+            view.attach(new Gtk.Label(setting.get_double("weather-temp").to_string()), 1, 1, 1, 1);
+
             add(overlay);
         }
     }
