@@ -9,6 +9,7 @@ namespace Equinox {
             this.app = app;
             this.set_application (app);
             this.set_size_request (950, 650);
+            var setting = new Settings ("com.github.matthewmong.equinox");
             window_position = Gtk.WindowPosition.CENTER;
             //create main view
             var overlay = new Gtk.Overlay ();
@@ -19,6 +20,8 @@ namespace Equinox {
             view.attach (new Gtk.Label(("Loading") +  "..."), 0, 0, 1, 1);
             overlay.add_overlay (view);
             Equinox.Utils.locate();
+            overlay.add_overlay(new Gtk.Label(setting.get_string("location")));
+            add(overlay);
         }
     }
 }

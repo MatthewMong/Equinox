@@ -1,0 +1,41 @@
+<schemalist>
+  <schema id="com.github.matthewmong.equinox" path="/com/github/matthewmong/equinox/" gettext-domain="com.github.matthewmong.equinox">
+
+    <key name="apiid" type="s">
+        <default l10n="messages">"936b1aed9a541e3446cafb8be2c70e62"</default>
+        <summary>API key</summary>
+        <description>API key from OpenWeatherMap</description>
+    </key>
+
+    <key name="location" type="s">
+        <default l10n="messages">""</default>
+        <summary>City name</summary>
+        <description>City name</description>
+    </key>
+
+    <key name="region" type="s">
+        <default l10n="messages">""</default>
+        <summary>Region name</summary>
+        <description>Region name</description>
+    </key>
+
+    <key name="country" type="s">
+        <default l10n="messages">""</default>
+        <summary>Country name</summary>
+        <description>Country name</description>
+    </key>
+
+    <key name="latitude" type="d">
+        <default>0</default>
+        <summary>latitude</summary>
+        <description>latitude</description>
+    </key>
+
+    <key name="longitude" type="d">
+        <default>0</default>
+        <summary>longitude</summary>
+        <description>longitude</description>
+    </key>
+
+  </schema>
+</schemalist>
