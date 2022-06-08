@@ -4,13 +4,17 @@ namespace Equinox.Utils {
         double lon;
     }
 
-    public void get_location () {
+    public void locate () {
+        get_location();
+    }
+
+    private static Location get_location () {
         var location = Location();
         var session = new Soup.Session ();
-        var message = new Soup.Message ("GET", Equinox.Constants.LOCATION_URL);
+        var message = new Soup.Message ("GET", Constants.LOCATION_URL);
         session.send_message (message);
         try {
-            var parser = new Json.Parser();
+            var parser = new Json.Parser ();
             parser.load_from_data ((string) message.response_body.flatten ().data, -1);
             var root_object = parser.get_root ().get_object ();
             var response = root_object.get_object_member ("location");
