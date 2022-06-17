@@ -3,7 +3,7 @@ namespace Equinox {
     public class MainWindow : Gtk.Window {
 
         public EquinoxApp app;
-        private Gtk.Grid view;
+        private Gtk.Box view;
 
         public MainWindow (EquinoxApp app) {
             this.app = app;
@@ -14,18 +14,19 @@ namespace Equinox {
 
             //create main view
             var overlay = new Gtk.Overlay ();
-            view = new Gtk.Grid ();
+            view = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
             view.expand = true;
             view.halign = Gtk.Align.FILL;
             view.valign = Gtk.Align.FILL;
             //  view.attach (new Gtk.Label(("Loading") +  "..."), 0, 0, 1, 1);
             overlay.add_overlay (view);
-            Equinox.Utils.locate();
-            Equinox.Utils.getWeather();
-            view.attach(new Gtk.Label(setting.get_string("location")), 1, 0, 1, 1);
-            view.attach(new Gtk.Label(setting.get_string("weather-main")), 0, 1, 1, 1);
-            view.attach(new Gtk.Label(setting.get_double("weather-temp").to_string()), 1, 1, 1, 1);
-
+            Equinox.Utils.locate ();
+            var currWeather = Equinox.Utils.get_OWAPI ();
+            view.pack_start(new Gtk.Label(setting.get_string("location")), true, true, 2);
+            view.pack_start(new Gtk.Label(currWeather.main), true, true, 2);
+            var image = new Gtk.Image.from_file ("03d.png");
+            view.pack_start(image, true, true, 2);
+            view.pack_start(new Gtk.Label(Equinox.Utils.toCelcius(currWeather.temp)), true, true, 2);
             add(overlay);
         }
     }
